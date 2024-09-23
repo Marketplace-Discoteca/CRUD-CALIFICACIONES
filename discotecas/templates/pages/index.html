@@ -1,0 +1,91 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+
+<section class="hero background">
+    <div class="hero__container container">
+        <div class="hero__content">
+            <span class="hero__span-1">VIVE</span>
+            <span class="hero__span-2">LA VIDA LOCA</span>
+            <span class="hero__span-3">HASTA EL AMANECER</span>
+            <span class="hero__span-4">LAS MEJORES DISCOTECAS DEL PERÚ</span>
+        </div>
+        <a href="#" class="hero__btn btn">EXPLORA MÁS</a>
+        <!-- <i class="fas"></i> -->
+    </div>
+</section>
+
+<section class="servicios background">
+    <div class="servicios__container container">
+        <div class="servicios__content">
+            <h2>NUESTROS SERVICIOS</h2>
+            <ul class="servicios__ul">
+                {% for servicio in servicios %}
+                    <li class="servicios__name">
+                        <h6>{{ servicio.nombre }}</h6>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="servicios__img-box">
+            {% load static %}
+            <img src="{% static 'img/services_right.jpg' %}" alt="servicio">
+        </div>
+    </div>
+</section>
+
+<section class="discotecas background">
+    <div class="discotecas__container container">
+        <h2>NUESTRAS DISCOTECAS</h2>
+        <ul class="discotecas__ul">
+            {% for discoteca in discotecas %}
+                <li class="discotecas__card">
+                    <div class="discotecas__img-box">
+                        {% load static %}
+                        <img src="{% static 'img/discoteca.jpg' %}" alt="discoteca">
+                        <a href="#" class="calificar-btn" data-nombre="{{ discoteca.nombre }}" data-ubicacion="{{ discoteca.ubicacion }}">Calificar</a>
+                    </div> 
+                    <div class="discotecas__desc">
+                        <h3>{{ discoteca.nombre }}</h3>
+                        <p>{{ discoteca.ubicacion }}</p>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>      
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span id="close-popup" class="close-popup">&times;</span>
+            <form id="rating-form">
+                <label for="popup-name">Nombre de la Discoteca:</label>
+                <input type="text" id="popup-name" name="nombre" disabled>
+                
+                <fieldset id="services-container">
+
+                    {% for servicio in servicios %}
+                        <p>Calificación de {{ servicio.nombre  }}:</p>
+                        <div class="rating-stars star-rating">
+                            <span class="star" data-value="1">&#9733;</span>
+                            <span class="star" data-value="2">&#9733;</span>
+                            <span class="star" data-value="3">&#9733;</span>
+                            <span class="star" data-value="4">&#9733;</span>
+                            <span class="star" data-value="5">&#9733;</span>
+                        </div>
+                    {% endfor %}
+                </fieldset>
+                    
+                <label for="comment">Comentario:</label>
+                <textarea id="comment" name="comentario" rows="4" placeholder="Escriba un comentario"></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+
+</section>
+
+{% endblock %}

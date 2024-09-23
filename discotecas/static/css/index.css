@@ -1,0 +1,245 @@
+.btn{
+    border: 1px solid white;
+    padding: 15px 30px;
+    line-height: 1;
+}
+.background {
+    width: 100%;
+    height: 100vh;
+}
+
+.hero {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(../img/hero-image.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero__container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.hero__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero__span-1{
+    width: 100%;
+    text-align: start;
+    font-size: 96px;
+    line-height: 1;
+    margin-bottom: -25px;
+}
+.hero__span-2{
+    font-weight: bolder;
+    font-size: 128px;
+    line-height: 1;
+}
+.hero__span-3,
+.hero__span-4{
+    font-size: 24px;
+    letter-spacing: 10px;
+}
+
+.servicios {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(../img/servicios.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.servicios__container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.servicios__content{
+    flex: 1;
+}
+
+.servicios__img-box{
+    flex: 1;
+    height: 600px;
+
+    img{
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+}
+
+.servicios__ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.servicios__name{
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.discotecas {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(../img/discotecas.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.discotecas__container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.discotecas__ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.discotecas__card{
+    flex: 1;
+    min-width: min(300px, 100%);
+}
+
+.discotecas__img-box{
+    width: 100%;
+    height: 200px;
+
+    position: relative;
+    overflow: hidden;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease, filter 0.3s ease;
+    }
+}
+
+.calificar-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.discotecas__img-box:hover img {
+    transform: scale(1.1); 
+    filter: brightness(0.5); 
+}
+
+.discotecas__img-box:hover .calificar-btn {
+    opacity: 1;
+    visibility: visible;
+}
+
+.discotecas__desc{
+    padding: 10px 20px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #fff;
+    color: black;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+#popup-name{
+    padding: 10px;
+}
+
+fieldset {
+    border: none;
+    margin: 10px 0;
+    padding: 0;
+}
+
+textarea {
+    background-color: white;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #007BFF !important; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.star-rating {
+    margin-top: -10px;
+    display: flex;
+    gap: 5px;
+}
+
+.star-rating .star {
+    font-size: 2rem;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.star-rating .star:hover,
+.star-rating .star.hover,
+.star-rating .star.selected {
+    color: #f5c518;
+}
